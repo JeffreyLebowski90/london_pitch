@@ -1,5 +1,7 @@
-import React from 'react'
-import TBSheet from '../TBSheet/TBSheet'
+import React, {Component} from 'react'
+import TBsheet from '../TBs/TBsheet'
+import TBpen from '../TBs/TBpen'
+import TBtape from '../TBs/TBtape'
 
 // const sheets = [
 //     ["A5", "100%", "100 IMI₵", "60s", "" ],
@@ -8,7 +10,24 @@ import TBSheet from '../TBSheet/TBSheet'
 //   ]
 
 
-const table = () => {
+class Table extends Component {
+    render() {
+        let tBody = null
+
+        switch (this.props.dropValue) {
+            case "sheet":
+                tBody = <TBsheet/>
+                break;
+            case "pen":
+                tBody = <TBpen/>
+                break;
+            case "tape":
+                tBody = <TBtape/>
+                break;        
+            default:
+                break;
+        }
+ 
         return (
             <table className="table table-dark">
                 <thead>
@@ -21,9 +40,10 @@ const table = () => {
                     <th scope="col">Select</th>
                     </tr>
                 </thead>
-                <TBSheet/>
+                {tBody}
             </table>
         )
     }
+}
 
-export default table
+export default Table

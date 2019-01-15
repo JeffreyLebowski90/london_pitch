@@ -20,7 +20,8 @@ class App extends Component {
   }  
   
   render() {
-    const table = this.state.showTable ? <Table/> : null
+    const table = this.state.showTable ? <Table dropValue={this.state.dropValue}/> : null
+
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}/>
