@@ -3,22 +3,22 @@ import TableBody from '../TableBody/TableBody'
 import tables from '../../assets/tables'
 
 class Table extends Component {
-    test(selectedRow){
-        console.log(selectedRow)
+    selectClick(selectedRow){
+        // this.props.selectedRow = selectedRow
     }
     render() {
         let tBody = null
         switch (this.props.dropValue) {
             case "sheet":
-                tBody = <TableBody selectClick={this.test}
+                tBody = <TableBody selectClick={this.props.selectClick}
                     data={tables.sheets}/>
                 break;
             case "pen":
-                tBody = <TableBody selectClick={this.test}
+                tBody = <TableBody selectClick={this.props.selectClick}
                     data={tables.pen}/>
                 break;
             case "tape":
-                tBody = <TableBody selectClick={this.test}
+                tBody = <TableBody selectClick={this.props.selectClick}
                     data={tables.tape}/>
                 break;        
             default:

@@ -3,11 +3,15 @@ import './App.css';
 import Radio from './components/Radio/Radio'
 import Table from './components/Table/Table'
 import SelectionBox from './components/SelectionBox/SelectionBox'
+import tables from './assets/tables'
 
 class App extends Component {
   state = {
     dropValue: '',
-    showTable: false
+    showTable: false,
+    sheetRow: [],
+    penRow: [],
+    tapeRow: []
   }
 
   dropChangeHandler = (e) => {
@@ -18,10 +22,27 @@ class App extends Component {
   buttonHandler = () => {
     const showTable = this.state.dropValue ? true : false
     this.setState({showTable: showTable})
-  }  
+  }
+
+  selectClickHandler = (selectedRow) => {
+    switch (this.state.dropValue) {
+      case "sheet":
+        const selectedArray = tables.sheets[selectedRow]
+        this.setState({sheetRow: selectedArray})
+        break;
+
+
+    
+      default:
+        break;
+    }
+  }
+  
   
   render() {
-    const table = this.state.showTable ? <Table dropValue={this.state.dropValue}/> : null
+    const table = this.state.showTable ? <Table
+      dropValue={this.state.dropValue}
+      selectClick={this.selectClickHandler} /> : null
 
     return (
       <div className="App">
@@ -29,9 +50,9 @@ class App extends Component {
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Search</button>
         {table}
-        <SelectionBox title="Sheet"/>
-        <SelectionBox title="Pen"/>
-        <SelectionBox title="Tape"/>
+        <SelectionBox title="Sheet" selectedRow={this.state.sheetRow}/>
+        <SelectionBox title="Pen" selectedRow={this.state.penRow}/>
+        <SelectionBox title="Tape" selectedRow={this.state.tapeRow}/>
       </div>
     );
   }

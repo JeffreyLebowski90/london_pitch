@@ -1,6 +1,7 @@
 import React from 'react'
 
 const selectionBox = (props) => {
+    console.log(props.selectedRow[0])
     return (
         <div className="card bg-light mb-3">
             <div className="card-header">
@@ -9,12 +10,12 @@ const selectionBox = (props) => {
         <div className="card-body">
             <div className="row">
                 <div className="col">
-                    <p><strong>Type: </strong>test_1</p>
-                    <p><strong>Price: </strong>test_2</p>
+                    <p><strong>Type: </strong>{props.selectedRow[0]}</p>
+                    <p><strong>Price: </strong>{props.selectedRow[1]}</p>
                 </div>
                 <div className="col">
-                    <p><strong>Matching: </strong>test_3</p>
-                    <p><strong>Delivery: </strong>test_4</p>
+                    <p><strong>Matching: </strong>{props.selectedRow[2]}</p>
+                    <p><strong>Delivery: </strong>{props.selectedRow[3]}</p>
                 </div>  
             </div>
             <button className="btn btn-primary">Confirm</button>
