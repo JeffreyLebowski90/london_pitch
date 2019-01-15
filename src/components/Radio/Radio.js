@@ -1,18 +1,21 @@
 import React from 'react'
 
-const radio = () => {
+const radio = (props) => {
   return (
     <React.Fragment>
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Equipment Type</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">Sheet</option>
-            <option value="2">Pen</option>
-            <option value="3">Tape</option>
-        </select>
+        <div className="input-group mb-3">
+            <div className="input-group-prepend">
+                <label className="input-group-text"
+                    htmlFor="inputGroupSelect01">
+                    Equipment Type</label>
+            </div>
+            <select className="custom-select" id="inputGroupSelect01"
+                onChange={props.dropChange}>
+                <option >Choose...</option>
+                <option value="sheet">sheet</option>
+                <option value="pen">pen</option>
+                <option value="tape">tape</option>
+            </select>
         </div>
     </React.Fragment>
   )

@@ -3,10 +3,14 @@ import './App.css';
 import Radio from './components/Radio/Radio'
 
 class App extends Component {
+  dropChangeHandler = (e) => {
+    console.log(e.target.value)
+  }
+  
   render() {
     return (
       <div className="App">
-        <Radio></Radio>
+        <Radio dropChange={this.dropChangeHandler}></Radio>
         <button className="btn btn-primary">Prova</button>
       </div>
     );
@@ -14,19 +18,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-{/* <header className="App-header">
-<img src={logo} className="App-logo" alt="logo" />
-<p>
-  Edit <code>src/App.js</code> and save to reload.
-</p>
-<a
-  className="App-link"
-  href="https://reactjs.org"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Learn React
-</a>
-</header> */}
