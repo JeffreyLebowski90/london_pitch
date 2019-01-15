@@ -25,14 +25,20 @@ class App extends Component {
   }
 
   selectClickHandler = (selectedRow) => {
+    let selectedArray = []
     switch (this.state.dropValue) {
       case "sheet":
-        const selectedArray = tables.sheets[selectedRow]
+        selectedArray = tables.sheets[selectedRow]
         this.setState({sheetRow: selectedArray})
         break;
-
-
-    
+      case "pen":
+        selectedArray = tables.pen[selectedRow]
+        this.setState({penRow: selectedArray})
+        break;
+      case "tape":
+        selectedArray = tables.tape[selectedRow]
+        this.setState({tapeRow: selectedArray})
+        break;  
       default:
         break;
     }
@@ -43,7 +49,6 @@ class App extends Component {
     const table = this.state.showTable ? <Table
       dropValue={this.state.dropValue}
       selectClick={this.selectClickHandler} /> : null
-
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}/>
