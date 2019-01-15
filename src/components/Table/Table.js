@@ -1,43 +1,25 @@
 import React, {Component} from 'react'
 import TableBody from '../TableBody/TableBody'
-
-const sheets = [
-    ["A5", "100%", "100 IMI₵", "30s"],
-    ["A4", "100%", "200 IMI₵", "60s"],
-    ["A3", "100%", "300 IMI₵", "90s"]
-  ]
-const pen = [
-    ["red", "100%", "200 IMI₵", "30s"],
-    ["green", "100%", "200 IMI₵", "30s"],
-    ["blue", "100%", "200 IMI₵", "30s"]
-  ]
-const tape = [
-    ["3m ©", "100%", "100 IMI₵", "60s"],
-    ["IMI", "100%", "100 IMI₵", "60s"],
-    ["paper", "100%", "100 IMI₵", "60s"]
-  ]
-
+import tables from '../../assets/tables'
 
 class Table extends Component {
     test(selectedRow){
         console.log(selectedRow)
     }
-
-
     render() {
         let tBody = null
         switch (this.props.dropValue) {
             case "sheet":
                 tBody = <TableBody selectClick={this.test}
-                    data={sheets}/>
+                    data={tables.sheets}/>
                 break;
             case "pen":
                 tBody = <TableBody selectClick={this.test}
-                    data={pen}/>
+                    data={tables.pen}/>
                 break;
             case "tape":
                 tBody = <TableBody selectClick={this.test}
-                    data={tape}/>
+                    data={tables.tape}/>
                 break;        
             default:
                 break;

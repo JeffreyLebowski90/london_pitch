@@ -27,7 +27,7 @@ class App extends Component {
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}/>
         <button className="btn btn-primary" onClick={this.buttonHandler}>
-          Prova</button>
+          Search</button>
         {table}
         <SelectionBox title="Sheet"/>
         <SelectionBox title="Pen"/>
