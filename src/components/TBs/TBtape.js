@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tBSheet = () => {
+const tBtape = (props) => {
   return (
     <tbody>
         <tr>
@@ -9,7 +9,8 @@ const tBSheet = () => {
             <td>100%</td>
             <td>100 IMI₵</td>
             <td>60s</td>
-            <td></td>
+            <td><button className="btn btn-primary btn-sm"
+                onClick={() => props.selectClick(0)} >Select</button></td>
         </tr>
         <tr>
             <th scope="row">#2</th>
@@ -17,7 +18,8 @@ const tBSheet = () => {
             <td>100%</td>
             <td>200 IMI₵</td>
             <td>120s</td>
-            <td></td>
+            <td><button className="btn btn-primary btn-sm"
+                onClick={() => props.selectClick(1)} >Select</button></td>
         </tr>
         <tr>
             <th scope="row">#3</th>
@@ -25,10 +27,11 @@ const tBSheet = () => {
             <td>100%</td>
             <td>300 IMI₵</td>
             <td>180s</td>
-            <td></td>
+            <td><button className="btn btn-primary btn-sm"
+                onClick={() => props.selectClick(2)} >Select</button></td>
         </tr>
     </tbody>
   )
 }
 
-export default tBSheet
+export default tBtape

@@ -11,18 +11,23 @@ import TBtape from '../TBs/TBtape'
 
 
 class Table extends Component {
+    test(selectedRow){
+        console.log(selectedRow)
+    }
+
+
     render() {
         let tBody = null
 
         switch (this.props.dropValue) {
             case "sheet":
-                tBody = <TBsheet/>
+                tBody = <TBsheet selectClick={this.test}/>
                 break;
             case "pen":
-                tBody = <TBpen/>
+                tBody = <TBpen selectClick={this.test}/>
                 break;
             case "tape":
-                tBody = <TBtape/>
+                tBody = <TBtape selectClick={this.test}/>
                 break;        
             default:
                 break;

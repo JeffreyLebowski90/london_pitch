@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Radio from './components/Radio/Radio'
 import Table from './components/Table/Table'
+import SelectionBox from './components/SelectionBox/SelectionBox'
 
 class App extends Component {
   state = {
@@ -28,6 +29,9 @@ class App extends Component {
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Prova</button>
         {table}
+        <SelectionBox/>
+        <SelectionBox/>
+        <SelectionBox/>
       </div>
     );
   }
