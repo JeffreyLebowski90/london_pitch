@@ -11,7 +11,7 @@ const radio = (props) => {
             </div>
             <select className="custom-select" id="inputGroupSelect01"
                 onChange={props.dropChange}>
-                <option >Choose...</option>
+                <option value="" >Choose...</option>
                 <option value="sheet">sheet</option>
                 <option value="pen">pen</option>
                 <option value="tape">tape</option>

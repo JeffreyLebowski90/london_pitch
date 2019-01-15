@@ -3,15 +3,25 @@ import './App.css';
 import Radio from './components/Radio/Radio'
 
 class App extends Component {
-  dropChangeHandler = (e) => {
-    console.log(e.target.value)
+  state = {
+    dropValue: ''
   }
+
+  dropChangeHandler = (e) => {
+    const dropValue = e.target.value
+    this.setState({dropValue: dropValue})
+  }
+  buttonHandler = () => {
+    console.log(this.state.dropValue)
+  }
+  
   
   render() {
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}></Radio>
-        <button className="btn btn-primary">Prova</button>
+        <button className="btn btn-primary" onClick={this.buttonHandler}>
+          Prova</button>
       </div>
     );
   }
