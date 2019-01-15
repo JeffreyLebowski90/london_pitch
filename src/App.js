@@ -3,6 +3,12 @@ import './App.css';
 import Radio from './components/Radio/Radio'
 import Table from './components/Table/Table'
 
+const sheets = [
+  ["A5", "100%", "100 IMI₵", "60s" ]
+  ["A4", "100%", "200 IMI₵", "120s" ]
+  ["A3", "100%", "300 IMI₵", "180s" ]
+]
+
 class App extends Component {
   state = {
     dropValue: '',
