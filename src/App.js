@@ -29,9 +29,9 @@ class App extends Component {
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Prova</button>
         {table}
-        <SelectionBox/>
-        <SelectionBox/>
-        <SelectionBox/>
+        <SelectionBox title="Sheet"/>
+        <SelectionBox title="Pen"/>
+        <SelectionBox title="Tape"/>
       </div>
     );
   }

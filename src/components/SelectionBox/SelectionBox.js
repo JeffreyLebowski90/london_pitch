@@ -1,15 +1,15 @@
 import React from 'react'
 
-const selectionBox = () => {
+const selectionBox = (props) => {
     return (
         <div className="card bg-light mb-3">
             <div className="card-header">
-                Featured
+                {props.title} Selection Box
             </div>
         <div className="card-body">
             <div className="row">
                 <div className="col">
-                    <p><strong>Sheet: </strong>test_1</p>
+                    <p><strong>Type: </strong>test_1</p>
                     <p><strong>Price: </strong>test_2</p>
                 </div>
                 <div className="col">
