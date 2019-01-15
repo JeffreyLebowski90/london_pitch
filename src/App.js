@@ -23,7 +23,7 @@ class App extends Component {
     const table = this.state.showTable ? <Table/> : null
     return (
       <div className="App">
-        <Radio dropChange={this.dropChangeHandler}></Radio>
+        <Radio dropChange={this.dropChangeHandler}/>
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Prova</button>
         {table}
