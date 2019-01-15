@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Radio from './components/Radio/Radio'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Radio></Radio>
         <button className="btn btn-primary">Prova</button>
       </div>
     );
