@@ -1,10 +1,14 @@
 import React from 'react'
 import Countdown from './Countdown/Countdown'
+import styles from './SelectionBox.module.css'
 
 const selectionBox = (props) => {
+    const animation = "card bg-light mb-3 " + styles.animated + " " + styles.bounce
     return (
-        <div className="card bg-light mb-3"
-            style={{maxWidth: '400px', margin: 'auto'}}>
+        <div hidden={props.selectedRow.length===0}
+            className={animation}
+            style={{maxWidth: '400px', margin: 'auto'}}
+            >
             <div className="card-header">
                 {props.title} Selection Box
             </div>

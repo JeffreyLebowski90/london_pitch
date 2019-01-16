@@ -25,7 +25,6 @@ export default class Countdown extends Component {
     startCountDown = () => {
         let id
         if(this.props.seconds > 0){
-            console.log("test")
             id = setInterval(this.tick, 1000)
             this.setState({seconds: this.props.seconds, id: id,
                 alreadyConfirmed: true})

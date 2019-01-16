@@ -60,6 +60,9 @@ class App extends Component {
           style={{marginBottom: '20px'}}>
           Search</button>
         {table}
+        <div>
+
+        </div>
         <SelectionBox title="Sheet"
           selectedRow={this.state.sheetRow}/>
         <SelectionBox title="Pen"
