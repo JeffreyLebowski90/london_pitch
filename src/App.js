@@ -28,15 +28,15 @@ class App extends Component {
     let selectedArray = []
     switch (this.state.dropValue) {
       case "sheet":
-        selectedArray = tables.sheets[selectedRow]
+        selectedArray = {...tables.sheets[selectedRow]}
         this.setState({sheetRow: selectedArray})
         break;
       case "pen":
-        selectedArray = tables.pen[selectedRow]
+        selectedArray = {...tables.pen[selectedRow]}
         this.setState({penRow: selectedArray})
         break;
       case "tape":
-        selectedArray = tables.tape[selectedRow]
+        selectedArray = {...tables.tape[selectedRow]}
         this.setState({tapeRow: selectedArray})
         break;  
       default:
@@ -55,9 +55,12 @@ class App extends Component {
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Search</button>
         {table}
-        <SelectionBox title="Sheet" selectedRow={this.state.sheetRow}/>
-        <SelectionBox title="Pen" selectedRow={this.state.penRow}/>
-        <SelectionBox title="Tape" selectedRow={this.state.tapeRow}/>
+        <SelectionBox title="Sheet"
+          selectedRow={this.state.sheetRow}/>
+        <SelectionBox title="Pen"
+          selectedRow={this.state.penRow}/>
+        <SelectionBox title="Tape"
+          selectedRow={this.state.tapeRow}/>
       </div>
     );
   }

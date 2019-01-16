@@ -1,4 +1,5 @@
 import React from 'react'
+import Countdown from './Countdown/Countdown'
 
 const selectionBox = (props) => {
     return (
@@ -14,10 +15,10 @@ const selectionBox = (props) => {
                 </div>
                 <div className="col">
                     <p><strong>Matching: </strong>{props.selectedRow[2]}</p>
-                    <p><strong>Delivery: </strong>{props.selectedRow[3]}</p>
+                    <p><strong>Delivery: </strong>{props.selectedRow[3]}s</p>
                 </div>  
             </div>
-            <button className="btn btn-primary">Confirm</button>
+            <Countdown seconds={props.selectedRow[3]}/>
         </div>
         </div> 
   )
