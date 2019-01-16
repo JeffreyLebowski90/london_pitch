@@ -26,7 +26,9 @@ class Table extends Component {
         }
  
         return (
-            <table className="table table-dark">
+            <table className="table table-dark"
+                style={{maxWidth: '600px', margin: 'auto',
+                    marginBottom: '20px'}}>
                 <thead>
                     <tr>
                     <th scope="col">Number</th>

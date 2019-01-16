@@ -3,7 +3,8 @@ import React from 'react'
 const radio = (props) => {
   return (
     <React.Fragment>
-        <div className="input-group mb-3">
+        <div className="input-group mb-3"
+            style={{maxWidth: '500px', margin: 'auto'}}>
             <div className="input-group-prepend">
                 <label className="input-group-text"
                     htmlFor="inputGroupSelect01">

@@ -56,7 +56,8 @@ class App extends Component {
           penRow = {this.state.penRow.length===0}
           tapeRow = {this.state.tapeRow.length===0}
           value = {this.state.dropValue}/>
-        <button className="btn btn-primary" onClick={this.buttonHandler}>
+        <button className="btn btn-success" onClick={this.buttonHandler}
+          style={{marginBottom: '20px'}}>
           Search</button>
         {table}
         <SelectionBox title="Sheet"

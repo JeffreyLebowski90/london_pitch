@@ -44,7 +44,7 @@ export default class Countdown extends Component {
             disabled={this.state.alreadyConfirmed}>
             Confirm</button>
             <p style={{fontWeight: 'bold', color: 'red',
-                marginBottom: '0px'}}
+                margin: '0px'}}
                 hidden={!this.state.alreadyConfirmed}>
                 Delivering in {this.state.seconds} seconds</p>
       </React.Fragment>

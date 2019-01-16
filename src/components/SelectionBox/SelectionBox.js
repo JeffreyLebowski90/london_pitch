@@ -3,7 +3,8 @@ import Countdown from './Countdown/Countdown'
 
 const selectionBox = (props) => {
     return (
-        <div className="card bg-light mb-3">
+        <div className="card bg-light mb-3"
+            style={{maxWidth: '400px', margin: 'auto'}}>
             <div className="card-header">
                 {props.title} Selection Box
             </div>
