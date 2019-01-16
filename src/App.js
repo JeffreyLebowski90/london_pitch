@@ -16,7 +16,7 @@ class App extends Component {
 
   dropChangeHandler = (e) => {
     const dropValue = e.target.value
-    this.setState({dropValue: dropValue})
+    this.setState({dropValue: dropValue, showTable: false})
   }
 
   buttonHandler = () => {
@@ -42,9 +42,9 @@ class App extends Component {
       default:
         break;
     }
+    this.setState({showTable: false})
   }
-  
-  
+    
   render() {
     const table = this.state.showTable ? <Table
       dropValue={this.state.dropValue}
