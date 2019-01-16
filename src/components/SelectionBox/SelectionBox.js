@@ -5,8 +5,7 @@ import styles from './SelectionBox.module.css'
 const selectionBox = (props) => {
     const animation = "card bg-light mb-3 " + styles.animated + " " + styles.bounce
     return (
-        <div hidden={props.selectedRow.length===0}
-            className={animation}
+        <div className={animation}
             style={{maxWidth: '400px', margin: 'auto'}}
             >
             <div className="card-header">

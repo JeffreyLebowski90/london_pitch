@@ -11,7 +11,8 @@ class App extends Component {
     showTable: false,
     sheetRow: [],
     penRow: [],
-    tapeRow: []
+    tapeRow: [],
+    boxArray: []
   }
 
   dropChangeHandler = (e) => {
@@ -26,6 +27,8 @@ class App extends Component {
 
   selectClickHandler = (selectedRow) => {
     let selectedArray = []
+    let boxArray = this.state.boxArray.slice()
+    boxArray.unshift(this.state.dropValue)
     switch (this.state.dropValue) {
       case "sheet":
         selectedArray = {...tables.sheets[selectedRow]}
@@ -42,13 +45,30 @@ class App extends Component {
       default:
         break;
     }
-    this.setState({showTable: false, dropValue: ''})
+    this.setState({showTable: false, dropValue: '',
+    boxArray: boxArray})
   }
     
   render() {
     const table = this.state.showTable ? <Table
       dropValue={this.state.dropValue}
       selectClick={this.selectClickHandler} /> : null
+    const boxArray = this.state.boxArray.map((el) => {
+      switch (el) {
+        case "sheet":
+          return <SelectionBox key={el} title="Sheet" selectedRow={this.state.sheetRow}/>
+        case "pen":
+          return <SelectionBox key={el} title="Pen" selectedRow={this.state.penRow}/>
+        case "tape":
+          return <SelectionBox key={el} title="Tape" selectedRow={this.state.tapeRow}/>
+        default:
+          return null
+      }
+    }
+    )
+    const reminder = this.state.boxArray.length < 3 ? <p
+      style={{color: 'red', fontWeight: 'bold'}}>
+      You need { 3 - this.state.boxArray.length} more objects !</p> : null
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}
@@ -59,16 +79,11 @@ class App extends Component {
         <button className="btn btn-success" onClick={this.buttonHandler}
           style={{marginBottom: '20px'}}>
           Search</button>
+        {reminder}
         {table}
         <div>
-
         </div>
-        <SelectionBox title="Sheet"
-          selectedRow={this.state.sheetRow}/>
-        <SelectionBox title="Pen"
-          selectedRow={this.state.penRow}/>
-        <SelectionBox title="Tape"
-          selectedRow={this.state.tapeRow}/>
+        {boxArray}
       </div>
     );
   }
