@@ -67,7 +67,7 @@ class App extends Component {
     }
     )
     const reminder = this.state.boxArray.length < 3 ? <p
-      style={{color: 'red', fontWeight: 'bold'}}>
+      style={{color: 'red', fontSize: '25px', fontWeight: 'bold'}}>
       You need { 3 - this.state.boxArray.length} more objects !</p> : null
     return (
       <div className="App">
@@ -76,8 +76,7 @@ class App extends Component {
           penRow = {this.state.penRow.length===0}
           tapeRow = {this.state.tapeRow.length===0}
           value = {this.state.dropValue}/>
-        <button className="btn btn-success" onClick={this.buttonHandler}
-          style={{marginBottom: '20px'}}>
+        <button className="btn btn-success" onClick={this.buttonHandler}>
           Search</button>
         {reminder}
         {table}

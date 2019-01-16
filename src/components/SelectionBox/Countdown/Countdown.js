@@ -43,7 +43,7 @@ export default class Countdown extends Component {
             onClick={this.startCountDown}
             disabled={this.state.alreadyConfirmed}>
             Confirm</button>
-            <p style={{fontWeight: 'bold', color: 'red',
+            <p style={{fontWeight: 'bold', color: 'darkgreen',
                 margin: '0px'}}
                 hidden={!this.state.alreadyConfirmed}>
                 Delivering in {this.state.seconds} seconds</p>
