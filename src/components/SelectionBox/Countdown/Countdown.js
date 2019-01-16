@@ -4,7 +4,8 @@ export default class Countdown extends Component {
 
     state = {
         seconds: 0,
-        id: ''
+        id: '',
+        alreadyConfirmed: false
     }
 
     tick = () => {
@@ -26,7 +27,8 @@ export default class Countdown extends Component {
         if(this.props.seconds > 0){
             console.log("test")
             id = setInterval(this.tick, 1000)
-            this.setState({seconds: this.props.seconds, id: id})
+            this.setState({seconds: this.props.seconds, id: id,
+                alreadyConfirmed: true})
         }
     }
 
@@ -37,7 +39,9 @@ export default class Countdown extends Component {
     //   }
     return (
       <React.Fragment>
-        <button className="btn btn-primary" onClick={this.startCountDown}>
+        <button className="btn btn-primary"
+            onClick={this.startCountDown}
+            disabled={this.state.alreadyConfirmed}>
             Confirm</button>
             <p>Delivering in {this.state.seconds} seconds</p>
       </React.Fragment>

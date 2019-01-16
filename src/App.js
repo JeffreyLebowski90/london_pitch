@@ -42,7 +42,7 @@ class App extends Component {
       default:
         break;
     }
-    this.setState({showTable: false})
+    this.setState({showTable: false, dropValue: ''})
   }
     
   render() {
@@ -51,7 +51,11 @@ class App extends Component {
       selectClick={this.selectClickHandler} /> : null
     return (
       <div className="App">
-        <Radio dropChange={this.dropChangeHandler}/>
+        <Radio dropChange={this.dropChangeHandler}
+          sheetRow = {this.state.sheetRow.length===0}
+          penRow = {this.state.penRow.length===0}
+          tapeRow = {this.state.tapeRow.length===0}
+          value = {this.state.dropValue}/>
         <button className="btn btn-primary" onClick={this.buttonHandler}>
           Search</button>
         {table}

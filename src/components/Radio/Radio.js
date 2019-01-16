@@ -10,11 +10,11 @@ const radio = (props) => {
                     Equipment Type</label>
             </div>
             <select className="custom-select" id="inputGroupSelect01"
-                onChange={props.dropChange}>
+                onChange={props.dropChange} value={props.value}>
                 <option value="" >Choose...</option>
-                <option value="sheet">sheet</option>
-                <option value="pen">pen</option>
-                <option value="tape">tape</option>
+                <option value="sheet" disabled={!props.sheetRow}>sheet</option>
+                <option value="pen" disabled={!props.penRow}>pen</option>
+                <option value="tape" disabled={!props.tapeRow}>tape</option>
             </select>
         </div>
     </React.Fragment>

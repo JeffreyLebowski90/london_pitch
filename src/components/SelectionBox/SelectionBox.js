@@ -11,10 +11,10 @@ const selectionBox = (props) => {
             <div className="row">
                 <div className="col">
                     <p><strong>Type: </strong>{props.selectedRow[0]}</p>
-                    <p><strong>Price: </strong>{props.selectedRow[1]}</p>
+                    <p><strong>Matching: </strong>{props.selectedRow[1]}</p>
                 </div>
                 <div className="col">
-                    <p><strong>Matching: </strong>{props.selectedRow[2]}</p>
+                    <p><strong>Price: </strong>{props.selectedRow[2]}</p>
                     <p><strong>Delivery: </strong>{props.selectedRow[3]}s</p>
                 </div>  
             </div>
