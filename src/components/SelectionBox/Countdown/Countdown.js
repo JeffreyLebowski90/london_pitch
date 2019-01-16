@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
 export default class Countdown extends Component {
-
+    constructor(props){
+        super(props)
+        this.id = ''
+    }
     state = {
         seconds: 0,
-        id: '',
         alreadyConfirmed: false
     }
 
@@ -15,7 +17,7 @@ export default class Countdown extends Component {
         }
         else
         {
-            clearInterval(this.state.id)
+            clearInterval(this.id)
         }
         // if (min === 0 & sec === 0) {
         // clearInterval(this.intervalHandle);
@@ -23,10 +25,9 @@ export default class Countdown extends Component {
     }
 
     startCountDown = () => {
-        let id
         if(this.props.seconds > 0){
-            id = setInterval(this.tick, 1000)
-            this.setState({seconds: this.props.seconds, id: id,
+            this.id = setInterval(this.tick, 1000)
+            this.setState({seconds: this.props.seconds,
                 alreadyConfirmed: true})
         }
     }
