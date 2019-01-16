@@ -1,7 +1,6 @@
 import React from 'react'
 
 const selectionBox = (props) => {
-    console.log(props.selectedRow[0])
     return (
         <div className="card bg-light mb-3">
             <div className="card-header">
