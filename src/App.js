@@ -84,8 +84,8 @@ class App extends Component {
     }
     )
     const reminder = this.state.boxArray.length < 3 ? <p
-      style={{color: 'red', fontWeight: 'bold'}}>
-      You need { 3 - this.state.boxArray.length} more objects</p> : <p></p>
+      style={{color: 'red', fontWeight: 'bold', fontSize: '75%', marginBottom: '5px'}}>
+      Need { 3 - this.state.boxArray.length} more objects</p> : <p></p>
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}
