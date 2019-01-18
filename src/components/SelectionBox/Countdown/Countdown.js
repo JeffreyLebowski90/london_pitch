@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from '../SelectionBox.module.css'
 
 export default class Countdown extends Component {
     constructor(props){
@@ -40,7 +41,8 @@ export default class Countdown extends Component {
             onClick={this.startCountDown}
             disabled={this.state.alreadyConfirmed}>
             Confirm</button> */}
-            <p style={{fontWeight: 'bold', color: 'darkgreen',
+            <p className={styles.animated + " " + styles.heartBeat}
+                style={{fontWeight: 'bold', color: 'darkgreen',
                 margin: '0px'}}
                 hidden={!this.state.alreadyConfirmed}>
                 Delivering in {this.state.seconds} seconds</p>
