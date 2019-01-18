@@ -31,12 +31,12 @@ class Table extends Component {
                     marginBottom: '20px'}}>
                 <thead>
                     <tr>
-                    <th scope="col">Number</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Matching</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Delivery</th>
-                    <th scope="col">Select</th>
+                    <th scope="col"></th>
+                    <th scope="col" style={{fontSize: '75%', padding: '12px 3px'}}>Description</th>
+                    <th scope="col" style={{fontSize: '75%', padding: '12px 3px'}}>Matching</th>
+                    <th scope="col" style={{fontSize: '75%', padding: '12px 3px'}}>Price</th>
+                    <th scope="col" style={{fontSize: '75%', padding: '12px 3px'}}>Delivery</th>
+                    <th scope="col" style={{fontSize: '75%', padding: '12px 3px'}}></th>
                     </tr>
                 </thead>
                 {tBody}
