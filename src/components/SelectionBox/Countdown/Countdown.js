@@ -19,9 +19,6 @@ export default class Countdown extends Component {
         {
             clearInterval(this.id)
         }
-        // if (min === 0 & sec === 0) {
-        // clearInterval(this.intervalHandle);
-        // }
     }
 
     startCountDown = () => {
@@ -39,10 +36,10 @@ export default class Countdown extends Component {
     //   }
     return (
       <React.Fragment>
-        <button className="btn btn-primary"
+        {/* <button className="btn btn-primary"
             onClick={this.startCountDown}
             disabled={this.state.alreadyConfirmed}>
-            Confirm</button>
+            Confirm</button> */}
             <p style={{fontWeight: 'bold', color: 'darkgreen',
                 margin: '0px'}}
                 hidden={!this.state.alreadyConfirmed}>

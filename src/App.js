@@ -47,7 +47,6 @@ class App extends Component {
         break;
     }
     let toPay = this.state.toPay + selectedArray[2]
-    console.log(toPay)
     this.setState({showTable: false, dropValue: '',
     boxArray: boxArray, toPay: toPay})
   }
@@ -70,8 +69,8 @@ class App extends Component {
     }
     )
     const reminder = this.state.boxArray.length < 3 ? <p
-      style={{color: 'red', fontSize: '25px', fontWeight: 'bold'}}>
-      You need { 3 - this.state.boxArray.length} more objects !</p> : <p></p>
+      style={{color: 'red', fontWeight: 'bold'}}>
+      You need { 3 - this.state.boxArray.length} more objects</p> : <p></p>
     return (
       <div className="App">
         <Radio dropChange={this.dropChangeHandler}
@@ -79,12 +78,15 @@ class App extends Component {
           penRow = {this.state.penRow.length===0}
           tapeRow = {this.state.tapeRow.length===0}
           value = {this.state.dropValue}/>
-        <div style={{maxWidth: '500px', margin: 'auto'}}>
-            <button className="btn btn-success" onClick={this.buttonHandler}>
-              Search</button><br/><br/>
-            <button className="btn btn-info btn-sm" >To Pay: {this.state.toPay} IMI₵</button>
+        <div className="row" style={{maxWidth: '500px', margin: 'auto'}}>
+          <div className="col">
+            <button className="btn btn-success" onClick={this.buttonHandler}>Search</button>
+          </div>
+          <div className="col">
+            <button className="btn btn-info" disabled={this.state.boxArray.length < 3}>Buy ( {this.state.toPay} IMI₵ )</button>
+            {reminder}
+          </div>           
         </div>
-        {reminder}
         {table}
         <div>
         </div>
