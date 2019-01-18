@@ -59,12 +59,31 @@
   animation-timing-function: ease-in-out;
 }
 
+/* FLASH */
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
 
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}
 
 /* ANIMATED (COMMON) */
   .animated {
     animation-duration: 1s;
     animation-fill-mode: both;
+  }
+  .animated.infinite {
+    animation-iteration-count: infinite;
   }
   @media (print), (prefers-reduced-motion) {
     .animated {

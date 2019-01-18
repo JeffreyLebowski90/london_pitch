@@ -8,7 +8,8 @@ export default class Countdown extends Component {
     }
     state = {
         seconds: 0,
-        alreadyConfirmed: false
+        alreadyConfirmed: false,
+        hideDel: false
     }
 
     tick = () => {
@@ -30,22 +31,26 @@ export default class Countdown extends Component {
         }
     }
 
+    hideDelivery = () => {
+        this.setState({hideDel: true})
+    }
+
   render() {
-    //   let pCounter = null
-    //   if(this.state.seconds > 0){
-    //       pCounter = <p>Delivering in {this.state.seconds} seconds</p>
-    //   }
+      const delivery = this.state.seconds > 0 ? <p 
+        className={styles.animated + " " + styles.heartBeat}
+        style={{fontWeight: 'bold', color: 'darkgreen',
+        margin: '0px'}}
+        hidden={!this.state.alreadyConfirmed}>
+        Delivering in {this.state.seconds} seconds</p> : <p
+        onClick={this.hideDelivery}
+        className={styles.animated + " " + styles.flash}
+        style={{fontWeight: 'bold', color: 'darkgreen',
+        margin: '0px', animationIterationCount: 'infinite'}}
+        hidden={!this.state.alreadyConfirmed || this.state.hideDel}>
+        Delivering in {this.state.seconds} seconds</p>
     return (
       <React.Fragment>
-        {/* <button className="btn btn-primary"
-            onClick={this.startCountDown}
-            disabled={this.state.alreadyConfirmed}>
-            Confirm</button> */}
-            <p className={styles.animated + " " + styles.heartBeat}
-                style={{fontWeight: 'bold', color: 'darkgreen',
-                margin: '0px'}}
-                hidden={!this.state.alreadyConfirmed}>
-                Delivering in {this.state.seconds} seconds</p>
+        {delivery}
       </React.Fragment>
     )
   }
