@@ -95,7 +95,8 @@ class App extends Component {
           value = {this.state.dropValue}/>
         <div className="row" style={{maxWidth: '500px', margin: 'auto'}}>
           <div className="col">
-            <button className="btn btn-success" onClick={this.buttonHandler}><strong>Search</strong></button>
+            <button className="btn btn-success" onClick={this.buttonHandler} disabled={!this.state.dropValue}
+            ><strong>Search</strong></button>
           </div>
           <div className="col">
             <button className="btn btn-success" disabled={this.state.boxArray.length < 3 || this.state.buyAlreadyClicked}

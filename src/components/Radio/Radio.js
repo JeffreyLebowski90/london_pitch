@@ -8,7 +8,7 @@ const radio = (props) => {
             <div className="input-group-prepend">
                 <label className="input-group-text"
                     htmlFor="inputGroupSelect01">
-                    Equipment Type</label>
+                    <strong>Equipment Type</strong></label>
             </div>
             <select className="custom-select" id="inputGroupSelect01"
                 onChange={props.dropChange} value={props.value}>
