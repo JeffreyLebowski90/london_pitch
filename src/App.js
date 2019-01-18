@@ -6,6 +6,12 @@ import SelectionBox from './components/SelectionBox/SelectionBox'
 import tables from './assets/tables'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.childSheet = React.createRef()
+    this.childPen = React.createRef()
+    this.childTape = React.createRef()
+  }
   state = {
     dropValue: '',
     showTable: false,
@@ -13,7 +19,8 @@ class App extends Component {
     penRow: [],
     tapeRow: [],
     boxArray: [],
-    toPay: 0
+    toPay: 0,
+    buyAlreadyClicked: false
   }
 
   dropChangeHandler = (e) => {
@@ -50,6 +57,14 @@ class App extends Component {
     this.setState({showTable: false, dropValue: '',
     boxArray: boxArray, toPay: toPay})
   }
+
+  buyClickHandler = () => {
+    this.childSheet.current.buyClicked();
+    this.childPen.current.buyClicked();
+    this.childTape.current.buyClicked();
+    this.setState({buyAlreadyClicked: true})
+  }
+  
     
   render() {
     const table = this.state.showTable ? <Table
@@ -58,11 +73,11 @@ class App extends Component {
     const boxArray = this.state.boxArray.map((el) => {
       switch (el) {
         case "sheet":
-          return <SelectionBox key={el} title="Sheet" selectedRow={this.state.sheetRow}/>
+          return <SelectionBox key={el} title="Sheet" selectedRow={this.state.sheetRow} ref={this.childSheet}/>
         case "pen":
-          return <SelectionBox key={el} title="Pen" selectedRow={this.state.penRow}/>
+          return <SelectionBox key={el} title="Pen" selectedRow={this.state.penRow} ref={this.childPen}/>
         case "tape":
-          return <SelectionBox key={el} title="Tape" selectedRow={this.state.tapeRow}/>
+          return <SelectionBox key={el} title="Tape" selectedRow={this.state.tapeRow} ref={this.childTape}/>
         default:
           return null
       }
@@ -83,7 +98,8 @@ class App extends Component {
             <button className="btn btn-success" onClick={this.buttonHandler}>Search</button>
           </div>
           <div className="col">
-            <button className="btn btn-info" disabled={this.state.boxArray.length < 3}>Buy ( {this.state.toPay} IMI₵ )</button>
+            <button className="btn btn-success" disabled={this.state.boxArray.length < 3 || this.state.buyAlreadyClicked}
+              onClick={this.buyClickHandler}>Buy ({this.state.toPay} IMI₵)</button>
             {reminder}
           </div>           
         </div>
